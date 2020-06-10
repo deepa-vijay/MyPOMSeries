@@ -1,25 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Hub Spot Regression Suite]">
+<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [Hub Spot Regression Suite]" parallel="tests">
+  <parameter name="browser" value="chrome"/>
   <listeners>
     <listener class-name="com.qa.hubspot.listeners.ExtentReportListener"/>
   </listeners>
-  <test name="Hub Spot Functional Test(failed)">
+  <test name="Hub Spot Test - Chrome(failed)" parallel="tests">
+    <parameter name="browser" value="chrome"/>
     <classes>
       <class name="com.qa.hubspot.tests.LoginPageTest">
         <methods>
           <include name="doLogin"/>
           <include name="setUp"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- com.qa.hubspot.tests.LoginPageTest -->
-      <class name="com.qa.hubspot.tests.HomePageTest">
-        <methods>
-          <include name="verifyHeaderTitleTest"/>
-          <include name="tearDown"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- com.qa.hubspot.tests.HomePageTest -->
     </classes>
-  </test> <!-- Hub Spot Functional Test(failed) -->
+  </test> <!-- Hub Spot Test - Chrome(failed) -->
+  <test name="Hub Spot Functional Test - FF(failed)" parallel="tests">
+    <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="com.qa.hubspot.tests.LoginPageTest">
+        <methods>
+          <include name="doLogin"/>
+          <include name="setUp"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.qa.hubspot.tests.LoginPageTest -->
+    </classes>
+  </test> <!-- Hub Spot Functional Test - FF(failed) -->
 </suite> <!-- Failed suite [Hub Spot Regression Suite] -->

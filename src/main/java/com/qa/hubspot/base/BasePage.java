@@ -76,7 +76,6 @@ public class BasePage {
 		
 		getDriver().manage().deleteAllCookies();
 		getDriver().manage().window().maximize();
-	//	driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		
 		return getDriver();
 	}
@@ -121,7 +120,7 @@ public class BasePage {
 	 */
 	public String getScreenshot() {
 		File src = ((TakesScreenshot) getDriver()).getScreenshotAs(OutputType.FILE);
-		String path = System.getProperty("user.dir")+ "\\screenshots" + System.currentTimeMillis() + ".png";
+		String path = System.getProperty("user.dir")+ "/screenshots/" + System.currentTimeMillis() + ".png";
 		File destination = new File(path);
 		
 		try {

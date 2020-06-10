@@ -1,21 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="2" total="6" passed="4">
+<testng-results skipped="0" failed="2" total="8" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="Hub Spot Regression Suite" duration-ms="88988" started-at="2020-06-10T10:48:22Z" finished-at="2020-06-10T10:49:51Z">
+  <suite name="Hub Spot Regression Suite" duration-ms="42389" started-at="2020-06-10T14:04:07Z" finished-at="2020-06-10T14:04:50Z">
     <groups>
     </groups>
-    <test name="Hub Spot Functional Test" duration-ms="88988" started-at="2020-06-10T10:48:22Z" finished-at="2020-06-10T10:49:51Z">
+    <test name="Hub Spot Test - Chrome" duration-ms="28913" started-at="2020-06-10T14:04:07Z" finished-at="2020-06-10T14:04:36Z">
       <class name="com.qa.hubspot.tests.LoginPageTest">
-        <test-method status="PASS" signature="verifyLoginPageTitle()[pri:1, instance:com.qa.hubspot.tests.LoginPageTest@350b3a17]" name="verifyLoginPageTitle" duration-ms="20165" started-at="2020-06-10T16:19:11Z" finished-at="2020-06-10T16:19:32Z">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.qa.hubspot.tests.LoginPageTest@341a8659]" name="setUp" is-config="true" duration-ms="12561" started-at="2020-06-10T19:34:08Z" finished-at="2020-06-10T19:34:20Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="verifyLoginPageTitle()[pri:1, instance:com.qa.hubspot.tests.LoginPageTest@341a8659]" name="verifyLoginPageTitle" duration-ms="6569" started-at="2020-06-10T19:34:20Z" finished-at="2020-06-10T19:34:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyLoginPageTitle -->
-        <test-method status="PASS" signature="verifySignUpLink()[pri:2, instance:com.qa.hubspot.tests.LoginPageTest@350b3a17]" name="verifySignUpLink" duration-ms="548" started-at="2020-06-10T16:19:36Z" finished-at="2020-06-10T16:19:36Z">
+        <test-method status="PASS" signature="verifySignUpLink()[pri:2, instance:com.qa.hubspot.tests.LoginPageTest@341a8659]" name="verifySignUpLink" duration-ms="121" started-at="2020-06-10T19:34:27Z" finished-at="2020-06-10T19:34:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifySignUpLink -->
-        <test-method status="FAIL" signature="doLogin()[pri:3, instance:com.qa.hubspot.tests.LoginPageTest@350b3a17]" name="doLogin" duration-ms="9386" started-at="2020-06-10T16:19:39Z" finished-at="2020-06-10T16:19:49Z">
+        <test-method status="FAIL" signature="doLogin()[pri:3, instance:com.qa.hubspot.tests.LoginPageTest@341a8659]" name="doLogin" duration-ms="6749" started-at="2020-06-10T19:34:27Z" finished-at="2020-06-10T19:34:34Z">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [Thanks for choosing HubSpot] but found [null]]]>
@@ -28,7 +39,7 @@
 	at org.testng.Assert.assertEquals(Assert.java:116)
 	at org.testng.Assert.assertEquals(Assert.java:190)
 	at org.testng.Assert.assertEquals(Assert.java:200)
-	at com.qa.hubspot.tests.LoginPageTest.doLogin(LoginPageTest.java:91)
+	at com.qa.hubspot.tests.LoginPageTest.doLogin(LoginPageTest.java:101)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -42,39 +53,51 @@
 	at org.testng.TestRunner.privateRun(TestRunner.java:753)
 	at org.testng.TestRunner.run(TestRunner.java:607)
 	at org.testng.SuiteRunner.runTest(SuiteRunner.java:368)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:363)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:321)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:270)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1284)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1209)
-	at org.testng.TestNG.runSuites(TestNG.java:1124)
-	at org.testng.TestNG.run(TestNG.java:1096)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:402)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
 ]]>
             </full-stacktrace>
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- doLogin -->
-        <test-method status="PASS" signature="enableRememberMeCheckBox()[pri:4, instance:com.qa.hubspot.tests.LoginPageTest@350b3a17]" name="enableRememberMeCheckBox" duration-ms="66" started-at="2020-06-10T16:19:49Z" finished-at="2020-06-10T16:19:49Z">
+        <test-method status="PASS" signature="enableRememberMeCheckBox()[pri:4, instance:com.qa.hubspot.tests.LoginPageTest@341a8659]" name="enableRememberMeCheckBox" duration-ms="176" started-at="2020-06-10T19:34:35Z" finished-at="2020-06-10T19:34:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- enableRememberMeCheckBox -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.hubspot.tests.LoginPageTest@341a8659]" name="tearDown" is-config="true" duration-ms="1162" started-at="2020-06-10T19:34:35Z" finished-at="2020-06-10T19:34:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
       </class> <!-- com.qa.hubspot.tests.LoginPageTest -->
-      <class name="com.qa.hubspot.tests.HomePageTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.hubspot.tests.HomePageTest@38600b]" name="setUp" is-config="true" duration-ms="34462" started-at="2020-06-10T16:18:22Z" finished-at="2020-06-10T16:18:57Z">
+    </test> <!-- Hub Spot Test - Chrome -->
+    <test name="Hub Spot Functional Test - FF" duration-ms="42389" started-at="2020-06-10T14:04:07Z" finished-at="2020-06-10T14:04:50Z">
+      <class name="com.qa.hubspot.tests.LoginPageTest">
+        <test-method status="PASS" signature="setUp(java.lang.String)[pri:0, instance:com.qa.hubspot.tests.LoginPageTest@44d70181]" name="setUp" is-config="true" duration-ms="18683" started-at="2020-06-10T19:34:08Z" finished-at="2020-06-10T19:34:27Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[firefox]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.qa.hubspot.tests.LoginPageTest@350b3a17]" name="setUp" is-config="true" duration-ms="14462" started-at="2020-06-10T16:18:57Z" finished-at="2020-06-10T16:19:11Z">
+        <test-method status="PASS" signature="verifyLoginPageTitle()[pri:1, instance:com.qa.hubspot.tests.LoginPageTest@44d70181]" name="verifyLoginPageTitle" duration-ms="5599" started-at="2020-06-10T19:34:27Z" finished-at="2020-06-10T19:34:32Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method status="FAIL" signature="verifyHeaderTitleTest()[pri:1, instance:com.qa.hubspot.tests.HomePageTest@38600b]" name="verifyHeaderTitleTest" duration-ms="111" started-at="2020-06-10T16:19:32Z" finished-at="2020-06-10T16:19:32Z">
+        </test-method> <!-- verifyLoginPageTitle -->
+        <test-method status="PASS" signature="verifySignUpLink()[pri:2, instance:com.qa.hubspot.tests.LoginPageTest@44d70181]" name="verifySignUpLink" duration-ms="1112" started-at="2020-06-10T19:34:32Z" finished-at="2020-06-10T19:34:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySignUpLink -->
+        <test-method status="FAIL" signature="doLogin()[pri:3, instance:com.qa.hubspot.tests.LoginPageTest@44d70181]" name="doLogin" duration-ms="6042" started-at="2020-06-10T19:34:33Z" finished-at="2020-06-10T19:34:39Z">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [Thanks for choosing HubSpot] but found [null]]]>
@@ -87,7 +110,7 @@
 	at org.testng.Assert.assertEquals(Assert.java:116)
 	at org.testng.Assert.assertEquals(Assert.java:190)
 	at org.testng.Assert.assertEquals(Assert.java:200)
-	at com.qa.hubspot.tests.HomePageTest.verifyHeaderTitleTest(HomePageTest.java:45)
+	at com.qa.hubspot.tests.LoginPageTest.doLogin(LoginPageTest.java:101)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -101,37 +124,28 @@
 	at org.testng.TestRunner.privateRun(TestRunner.java:753)
 	at org.testng.TestRunner.run(TestRunner.java:607)
 	at org.testng.SuiteRunner.runTest(SuiteRunner.java:368)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:363)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:321)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:270)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1284)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1209)
-	at org.testng.TestNG.runSuites(TestNG.java:1124)
-	at org.testng.TestNG.run(TestNG.java:1096)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:236)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:81)
+	at org.testng.SuiteRunner.access$000(SuiteRunner.java:39)
+	at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:402)
+	at org.testng.internal.thread.ThreadUtil$2.call(ThreadUtil.java:64)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at java.lang.Thread.run(Thread.java:748)
 ]]>
             </full-stacktrace>
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyHeaderTitleTest -->
-        <test-method status="PASS" signature="clickContactsMenu()[pri:2, instance:com.qa.hubspot.tests.HomePageTest@38600b]" name="clickContactsMenu" duration-ms="2760" started-at="2020-06-10T16:19:36Z" finished-at="2020-06-10T16:19:39Z">
+        </test-method> <!-- doLogin -->
+        <test-method status="PASS" signature="enableRememberMeCheckBox()[pri:4, instance:com.qa.hubspot.tests.LoginPageTest@44d70181]" name="enableRememberMeCheckBox" duration-ms="249" started-at="2020-06-10T19:34:40Z" finished-at="2020-06-10T19:34:40Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- clickContactsMenu -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.hubspot.tests.HomePageTest@38600b]" name="tearDown" is-config="true" duration-ms="937" started-at="2020-06-10T16:19:49Z" finished-at="2020-06-10T16:19:50Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.hubspot.tests.LoginPageTest@350b3a17]" name="tearDown" is-config="true" duration-ms="842" started-at="2020-06-10T16:19:50Z" finished-at="2020-06-10T16:19:51Z">
+        </test-method> <!-- enableRememberMeCheckBox -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.qa.hubspot.tests.LoginPageTest@44d70181]" name="tearDown" is-config="true" duration-ms="10058" started-at="2020-06-10T19:34:40Z" finished-at="2020-06-10T19:34:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.qa.hubspot.tests.HomePageTest -->
-    </test> <!-- Hub Spot Functional Test -->
+      </class> <!-- com.qa.hubspot.tests.LoginPageTest -->
+    </test> <!-- Hub Spot Functional Test - FF -->
   </suite> <!-- Hub Spot Regression Suite -->
 </testng-results>
