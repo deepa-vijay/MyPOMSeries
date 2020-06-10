@@ -4,11 +4,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import com.qa.hubspot.base.BasePage;
+import com.qa.hubspot.util.AppConstants;
+import com.qa.hubspot.util.Credentials;
+import com.qa.hubspot.util.ElementUtil;
 
 public class LoginPage extends BasePage {
 	
 	WebDriver driver;
-	
+	ElementUtil elementUtil;
 	// By Locators
 	
 	By username = By.id("username");
@@ -17,27 +20,39 @@ public class LoginPage extends BasePage {
 	By forgotPwdLink = By.linkText("Forgot my password");
 	By signUpLink = By.linkText("Sign up");
 	By rememberCkoBox = By.xpath("//span[@class='private-checkbox__icon private-checkbox__dash']");
+	By ErrorMessage = By.xpath("//div[@class='private-alert__inner']");
 	
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
+		elementUtil = new ElementUtil(driver);
 	}
+	
 	// Actions (Methods)
 	
 	public String getPageTitle() {
-		return driver.getTitle();
+		elementUtil.waitForTitlePresent(AppConstants.LOGIN_PAGE_TITLE);
+		return elementUtil.doGetPageTitle();
 	}
 	
 	public boolean checkSignUpLink() {
-		return driver.findElement(signUpLink).isDisplayed();
+		elementUtil.waitForElementPresent(signUpLink);
+		return elementUtil.doIsDisplayed(signUpLink);
 	}
 	
-	public void doLogin(String email, String pwd) {
-		driver.findElement(username).sendKeys(email);
-		driver.findElement(password).sendKeys(pwd);
-		driver.findElement(loginBtn).click();
+	public HomePage doLogin(Credentials credUser) {
+		elementUtil.waitForElementPresent(username);
+		elementUtil.doSendKeys(username, credUser.getAppUserName());
+		elementUtil.doSendKeys(password, credUser.getAppPassword());
+		elementUtil.doClick(loginBtn);
+		return new HomePage(driver);
 	}
 	
 	public void clickCheckBox() {
-		driver.findElement(rememberCkoBox).click();
+	//	driver.findElement(rememberCkoBox).click();
+		elementUtil.doClick(rememberCkoBox);
+	}
+	
+	public boolean isErrorMessageDisplayed() {
+		return elementUtil.doIsDisplayed(ErrorMessage);
 	}
 }
