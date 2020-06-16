@@ -4,13 +4,13 @@ pipeline {
 
         stage('Build Dev') {
           steps {
-            sh 'mvn clean install'
+            'mvn clean install'
           }
         }
 
         stage('chrome') {
           steps {
-            sh 'mvn test -Denv=qa -Dbrowser=chrome'
+            'mvn test -Denv=qa -Dbrowser=chrome'
           }
         }
 
