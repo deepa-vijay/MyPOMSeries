@@ -1,42 +1,57 @@
 pipeline {
+
   agent any
+
+  tools {
+
+    maven 'M3'
+
+  }
+
   stages {
 
-        stage('Build Dev') {
-          steps {
-           bat 'mvn clean install'
-          }
-        }
+    stage('Build') {
 
-        stage('chrome') {
-          steps {
-           bat 'mvn test -Denv=qa -Dbrowser=chrome'
-          }
-        }
-
-
-    stage('Publish reports') {
       steps {
-        script {
-        
-         // publish html
-        		publishHTML([
-        		allowMissing: false, 
-        		alwaysLinkToLastBuild: false, 
-        		keepAll: false, 
-        		reportDir: 'build', 
-        		reportFiles: 'TestExecutionReport.html', 
-        		reportName: 'Extent HTML Report',
-        		 reportTitles: ''
-        		 ])
-          
-        }
+
+        bat 'mvn clean test'
 
       }
+
     }
 
-  }
-  tools {
-    maven 'M3'
-  }
+stage('reports') {
+
+    steps {
+
+    script {
+
+            // publish html
+
+                    publishHTML([
+
+                    allowMissing: false,
+
+                    alwaysLinkToLastBuild: false,
+
+                    keepAll: false,
+
+                    reportDir: 'build',
+
+                    reportFiles: 'TestExecutionReport.html',
+
+                    reportName: 'Extent HTML Report',
+
+                     reportTitles: ''
+
+                     ])              
+
+    }
+
+    }
+
+}
+
+}
+
 }
